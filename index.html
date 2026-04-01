@@ -118,7 +118,7 @@ tr.neg td.cap{color:var(--danger);}
   <div class="tab" onclick="showTab('clientes',this)">Por Cliente</div>
   <div class="tab" onclick="showTab('mensal',this)">Jan vs Fev</div>
   <div class="nav-right">
-    <span class="sub-badge">Base: Dez/25 → Fev/26</span>
+    <span class="period-badge" style="background:#b45309;letter-spacing:.03em;">📅 Fechamento Fev/26</span>
     <span class="period-badge">YTD Fev/26</span>
   </div>
 </div>
@@ -353,7 +353,14 @@ function renderPace(){
   const progTot=`<div class="prog-wrap" style="border-top:1px solid var(--border);padding-top:8px;margin-top:4px;"><div class="prog-label"><span class="prog-name" style="color:var(--gl);">Total RTS</span><span class="prog-val" style="color:var(--gl);">${fmtM(totYTD)} · ${totPct.toFixed(1)}%</span></div><div class="prog-bar"><div class="prog-fill" style="width:${Math.min(100,totPct)}%;background:var(--gl);"></div></div></div>`;
 
   document.getElementById('page-pace').innerHTML=`
-  <div class="metrics">${metricsHTML}</div>
+      <div style="background:rgba(180,83,9,0.15);border:1px solid rgba(180,83,9,0.5);border-radius:8px;padding:.85rem 1.2rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:12px;">
+      <span style="font-size:22px;flex-shrink:0;">📅</span>
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#fbbf24;letter-spacing:.02em;">Última posição consolidada: Fevereiro/26</div>
+        <div style="font-size:11px;color:#d97706;margin-top:2px;">A consolidação de março ainda não foi realizada. Os números refletem captação acumulada de Jan + Fev/26.</div>
+      </div>
+    </div>
+    <div class="metrics">${metricsHTML}</div>
   <div class="card">
     <div class="gbar"></div>
     <div class="section-title">Pace vs Meta Anual — R$100MM por Banker</div>
